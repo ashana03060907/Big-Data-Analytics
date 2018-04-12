@@ -1,0 +1,18 @@
+service: unisonAWS 
+
+provider:
+  name: aws
+  runtime: python3.6
+  versioFunctions: false
+  memorySize: 128
+  region: us-east-2
+
+
+functions:
+  product:
+    handler: handler.product
+    events:
+      - http:
+          path: echo/product
+          method: post
+
